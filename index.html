@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <!-- 13.캐로셀 안의 컨텐츠에 사용할 animate.css cdn link -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- 1.파비콘 넣기 -->
+    <link rel="icon" href="img/favicon.ico">
+    <!-- 19. css와 js를 따로 분리 -->
+    <link rel="stylesheet" href="css/mystyle.css">
+
+    <title>KABREW GYEONGBOKGUNG</title>
+  </head>
+
+  <!-- 35. scrollspy를 위한 data속성 설정 -->
+  <!-- 57. 스크롤시 활성화되는 메뉴의 시점이 잘 맞지 않는 부분에 data-offset으로 조절 -->
+  <body data-spy="scroll" data-target="#navbarSupportedContent" data-offset="100">
+    <!-- 15.loading img넣기 -->
+    <div class="loading">
+        <div class="d-flex justify-content-center">
+            <img src="img/loading.gif" alt="">
+        </div>
+    </div>
+    <!-- 3. container-fluid안의 x축padding:0 -->
+    <div class="container-fluid px-0">
+      <!----------------------------------------------------------------
+          26. 상단의 캐로셀과 navbar 컨텐츠를 header#top으로 설정
+        ---------------------------------------------------------------->
+      <header id="top">
+        <!-- 2. 캐로셀 넣고 With captions 아이디 변경하고 ol>li의 data-target속성과 a의 href속성값도 id명으로 변경-->
+        <div id="topCarousel" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#topCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#topCarousel" data-slide-to="1"></li>
+            <li data-target="#topCarousel" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <!-- <img src="img/carousel_01.jpg" class="d-block w-100" alt="..."> -->
+              <!-- 17. 캐로셀 안의 캡션이 md미만 사이즈에서는 보이지 않도록 설정한 d-none, d-md-block은 삭제 -->
+              <div class="carousel-caption">
+                <!-- 6.캐로셀의 캡션 안의 텍스트 대신에 이미지로 변경 -->
+                <h5>
+                    <!-- 14.animte.css가 동작하도록 해당 클래스명 부여 -->
+                    <!-- 18. 캡션 안에 임의로 넣은 img가 화면크기가 작아지면 부모요소를 기준으로 같이 크기가 작아지도록 .img-fluid를 주어 max-width:100%, height:auto로 설정한다. -->
+                    <img src="img/carousel_01_left.png" alt="" class="animate__animated animate__fadeInLeft img-fluid">
+                </h5>
+                <p>
+                    <img src="img/carousel_01_right.png" alt="" class="animate__animated animate__fadeInRight img-fluid">
+                </p>
+              </div>
+            </div>
+            <div class="carousel-item">
+             <!--  <img src="img/carousel_02.jpg" class="d-block w-100" alt="..."> -->
+              <div class="carousel-caption">
+                <h5>
+                    <img src="img/carousel_02_left.png" alt=""class="animate__animated animate__fadeInLeft img-fluid">
+                </h5>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <!-- <img src="img/carousel_03.jpg" class="d-block w-100" alt="..."> -->
+              <div class="carousel-caption">
+                <h5>
+                    <img src="img/carousel_03_left.png" alt=""class="animate__animated animate__fadeInLeft img-fluid">
+                </h5>
+                <p>
+                    <img src="img/carousel_03_right.png" alt=""class="animate__animated animate__fadeInRight img-fluid mx-2">
+                    <img src="img/carousel_03_right(2).png" alt=""class="animate__animated animate__fadeInRight img-fluid mx-2">
+                </p>
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#topCarousel" role="button" data-slide="prev">
+            <!-- 4.캐로셀 left, right 아이콘을 bs4의 svg코드로 변경하고 크기를 원하는 사이즈로 변경 -->
+            <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-chevron-compact-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M9.224 1.553a.5.5 0 0 1 .223.67L6.56 8l2.888 5.776a.5.5 0 1 1-.894.448l-3-6a.5.5 0 0 1 0-.448l3-6a.5.5 0 0 1 .67-.223z"/>
+            </svg>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#topCarousel" role="button" data-slide="next">
+           <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-chevron-compact-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671z"/>
+            </svg>
+            <span class="sr-only">Next</span>
+          </a>
+        </div><!-- .carousel -->
+      </header><!-- header end -->
+
+        <!-- 20. navbar넣고 li메뉴 7개 작성 -->
+        <!-- 33. 네브바에 scrollspy 설정 -->
+        <!-- 34. 네브바 속성을 position:sticky로 설정 -->
+        <!-- 56. 네브바가 최상단으로 스크롤되었을 때 fixed되도록 sticky-top을 추가하는데 구조상 본인이 최사위 구조여야 작동한다! -->
+      <!-- <div class="row bg-black sticky-top"> -->
+        <!-- <div class="container-xl"> -->
+          <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-black">
+              <!-- 24. 상단네브 좌측에 로고 2개 넣고 화면 사이즈별로 서로 다른 이미지가 보이도록 설정 -->
+            <a class="navbar-brand text-hide" href="#">카브루 경복궁맥주
+              <img src="img/logo-md.png" alt="" class=" img-fluid d-none d-md-block">
+              <img src="img/logo-sm.png" alt="" class=" img-fluid d-md-none d-md-none">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <!-- 22. ul을 우측으로 이동하기 위해 mr-auto를 ml-auto로 수정 -->
+              <ul class="navbar-nav ml-auto">
+               <!-- 36. 스크롤스파이가 작동하기 위해 각 li>a의 href="#아이디명" 설정하고 첫번째 li가 갖고있던 .active삭제 -->
+                <li class="nav-item">
+                  <a class="nav-link" href="#top">당신의 일상에 환상을 더하다
+                      <span class="sr-only">(current)</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#design">경복궁맥주의 디자인</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#story">브랜드 스토리</a>
+                </li>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#beers">카브루의 또다른 맥주</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#cf">TV CF</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#garden">프로즌가든</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#contact">CONTACT</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        <!-- </div> --><!-- container-xl end -->
+      <!-- </div> --><!-- row(nav) end -->
+
+      <!----------------------------------------------------------------
+          27. 두번째 컨텐츠를 section#design
+        ---------------------------------------------------------------->
+      <section id="design">
+          <div class="container py-5">
+              <div class="row py-5">
+                  <div class="col-md-8 offset-md-2">
+                    <div class="row">
+                      <img src="img/menu2_title.png" alt="" class="wp1 img-fluid mx-auto">
+                    </div>
+                  </div><!-- col-md-8(2page title) end -->
+              </div><!-- row(title) end -->
+
+              <div class="row">
+                  <div class="col text-center">
+                      <img src="img/menu2_ad.png" alt="" class="wp2 img-fluid">
+                  </div><!-- col(경복궁맥주) end -->
+              </div><!-- row(경복궁맥주) end -->
+              <div class="row py-2">
+                  <div class="col-lg-6 my-auto">
+                      <div class="row">
+                          <img src="img/menu2_history.png" alt="" class="wp3 img-fluid mx-auto">
+                      </div>
+                  </div><!-- col-lg-8(디자인 시안) end -->
+                  <div class="col-lg-6">
+                      <div class="row justify-content-center">
+                          <img src="img/menu2_factory.png" alt="" class="wp3 img-fluid">
+                      </div>
+                  </div><!-- col-lg-4(디자인 시안) end -->
+              </div><!-- row(디자인) end -->
+          </div><!-- container(design) end -->
+      </section><!-- section(design(2page)) end -->
+
+      <!----------------------------------------------------------------
+          28. 세번째 컨텐츠를 section#story
+        ---------------------------------------------------------------->
+      <section id="story">
+        <div class="container my-5">
+          <div class="row wp4">
+            <div class="col-md-7">
+              <div class="row">
+                <img src="img/menu3_title.png" alt="" class="img-fluid">
+              </div>
+              <div class="row text-center">
+                <h5>
+                  <small>건과일류의 맛이 가득한 특수 맥아들을 넣어만든 맥주</small> <br>
+                  Session IPA의 장점인 화사하고 시트러시한 홉의 향을 살리고 기존 시장에 있는 세션 IPA와는 다르게 개성이 강하고 맥아와 홉의 균형이 좋은 session IPA입니다.
+                </h5>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <!-- 30. 이미지를 가로기준 센터로 배치하기 위한 방법
+              1) 부모 .row를 만들고 부모요소에 .justify-center-center를 준다.
+              2) 부모 .row를 만들고 자식요소에 .mx-auto를 준다.
+
+              31. 이미지를 우측으로 이동하는 방법.
+              1) 부모 .row를 만들고 부모요소에 .justify-center-end를 준다.
+              2) 부모 .row를 만들고 자식요소에 .ml-auto를 준다.
+              3) img자체에 float-right를 준다.
+
+              32. img를 세로기준 센터로 배치하기 위한 방법
+              1) 부모 .row를 만들고 부모요소에 .align-items-center를 준다.
+              2) 부모 .row를 만들고 자식요소에 .my-auto를 준다.
+              3) 부모 .row를 만들고 자식요소에 .align.self-center를 준다. -->
+              <div class="row">
+                <img src="img/menu3_products.png" alt="" class="img-fluid mx-auto">
+              </div>
+            </div>
+          </div><!-- row(story) end -->
+        </div><!-- container(story) end -->
+      </section><!-- section(story(3page)) end -->
+
+      <!----------------------------------------------------------------
+          40. 네번째 컨텐츠를 section#beers
+      ---------------------------------------------------------------->
+      <section id="beers">
+        <div class="container py-5">
+          <div class="row py-4">
+            <img src="img/menu4_title.png" alt="" class="wp5 img-fluid mx-auto">
+          </div>
+          <!-- 남산맥주 -->
+          <div class="row py-5">
+            <div class="wp6 col-md-6 offset-md-1 text-center">
+              <div class="row">
+                <img src="img/menu4_text1.png" alt="" class="mx-auto">
+              </div><br>
+              <b>라거에 익숙한 소비자도 부담없는 맥주</b><br>
+              <p class="small">골든 에일 스타일의 남산 에일은 향긋하고 상쾌한 프리미엄 시트라 에일로, 바디감을 낮추고 청량감을 높여 라거에 익숙한 소비자도 부담 없이 마실 수 있는 것이 특징이다.</p>
+              <b>남산맥주의 매력</b><br>
+              <p class="small">한국적인 재료인 진달래꽃을 첨가해 보다 싱그러운 맛을 느낄 수 있고, 베리와 시트러스의 상큼한 향이 풍부하고 음용성이 좋아 따뜻해지는 날씨에 가볍게 즐기는 맥주로 제격이다.</p>
+              <b>남산이라는 이름</b><br>
+              <p class="small">600년이 넘는 시간 동안 서울에 중심에서 대한민국의 역사와 함께 해온 남산의 상징성을 담은 것으로, 남산이 내려다 본 우리의 희노애락을 다양한 홉으로 표현하고자 했다.</p><br>
+            </div>
+            <div class="col-md-4 offset-md-1 d-md-flex">
+              <div class="row align-self-center mx-auto">
+               <img src="img/menu4_text1_product.png" alt="" class="wp7 img-fluid mx-auto">
+              </div>
+            </div>
+          </div><!-- row(anotehr(남산맥주) 내용) end -->
+          <!-- 구미호맥주 -->
+          <div class="row">
+            <div class="wp8 col-md-6 offset-md-1 text-center">
+              <div class="row">
+                <img src="img/menu4_text2.png" alt="" class="mx-auto">
+              </div><br>
+              <b>‘저자극’, ‘휴식’ 콘셉트의 편안한 데일리 비어</b><br>
+              <p class="small">자극적이지 않고 가벼운 음용감이 특징인 아메리칸 위트 에일을 모티브 삼았다. 여기에 레몬그라스 향을 더해 카브루만의 레시피로 탄생했다. 실제 소화 촉진과 상쾌한 향으로 피로 해소 효과가 있는 생 레몬그라스도 캔맥주 최초로 첨가했다. </p>
+              <b>일상에서의, 도심에서의 휴식을 담은 패키지</b><br>
+              <p class="small">일반적으로 '휴식'하면 떠오르는 자연 속에서의 힐링, 녹음의 그린 컬러가 아닌, 퇴근 무렵의 짙은 노을과 다양한 네온사인, 도심을 비추는 자동차의 라이트 등을 표현하는 진한 퍼플 컬러를 적용했다. 여기에 사람이 가장 안정감을 느낄 때 보인다는 뇌파 형태인 '알파파'를 형상화해 패키지에도 담아냈다.</p>
+            </div>
+            <div class="col-md-4 offset-md-1 d-md-flex">
+              <div class="row align-self-center mx-auto my-4">
+               <img src="img/menu4_text2_product.png" alt="" class="wp9 img-fluid mx-auto">
+              </div>
+            </div>
+          </div><!-- row(anotehr(구미호맥주) 내용) end -->
+        </div><!-- container(beers)  end-->
+      </section><!-- section(beers) end-->
+
+      <!----------------------------------------------------------------
+          41. 다섯번째 컨텐츠를 section#cf로 지정
+      ---------------------------------------------------------------->
+      <section id="cf">
+        <div class="wp10 container py-5">
+          <div class="row py-3">
+            <img src="img/menu5_title.png" alt="" class="img-fluid mx-auto">
+          </div>
+          <div class="row py-5">
+            <div class="col-8 mx-auto">
+              <!-- 43.유튜브 동영상 embed -->
+              <div class="embed-responsive embed-responsive-16by9 d-none d-md-block">
+               <!-- 44.유튜브 매개변수를 활용하여 동영상 play 속성변경: 자동플레이하려면 autoplay=1&mute=1, 무한반복하려면 loop=1&playlist=video_id 등  -->
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/J74J5vxS9oQ?autoplay=1&mute=1&color=white"></iframe>
+              </div>
+              <!-- 45.xs, sm 사이즈에서는 동영상을 숨기고 링크로 변환 -->
+              <a href="https://youtu.be/ShZ9_uWViV4" target="_blank" class="d-md-none">
+                <div class="row">
+                  <img src="img/menu5_youtube.png" alt="" class="mx-auto">
+                </div><!-- row -->
+              </a>
+            </div><!-- col-8 mx-auto end -->
+          </div><!-- row end -->
+        </div><!-- container end -->
+      </section>
+
+      <!-------------------------------------
+          46.여번째 컨텐츠(카드)를 section#garden로 지정    ---------------------------------------->
+      <section id="garden" class="pb-5">
+        <div class="container py-5">
+          <div class="row py-5">
+            <img src="img/menu6_title.png" alt="" class="wp11 img-fluid mx-auto">
+          </div>
+          <!-- 47.디바이스 사이즈마다 다르게 바뀌는 그리드 구현하기 위해 .row+.row-cols로 시작하는 클래스명 추가 -->
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+            <div class="col wp12">
+              <!-- 48.card 컴포넌트 넣기 -->
+              <!-- 50. .card옆에 style width값 삭제 -->
+              <div class="card border border-warning">
+                <!-- 49.이미지 지우고 캐로셀 넣기 -->
+                <!-- 55. card안에 .carousel이 가지고 있는 id명을 변경하고 ol>li가 가지고 있는 data-target속성값과 a태그가 가지고 있는 href속성값을 같은 이름으로 맞춰준다. -->
+                <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel">
+                  <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators1" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators1" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators1" data-slide-to="2"></li>
+                    <li data-target="#carouselExampleIndicators1" data-slide-to="3"></li>
+                  </ol>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="img/frozen_garden/menu6_garden01.jpg" class="d-block w-100" alt="...">
+                    </div><!-- carousel-item -->
+                    <div class="carousel-item">
+                      <img src="img/frozen_garden/menu6_garden02.jpg" class="d-block w-100" alt="...">
+                    </div><!-- carousel-item -->
+                    <div class="carousel-item">
+                      <img src="img/frozen_garden/menu6_garden03.jpg" class="d-block w-100" alt="...">
+                    </div><!-- carousel-item -->
+                    <div class="carousel-item">
+                      <img src="img/frozen_garden/menu6_garden04.jpg" class="d-block w-100" alt="...">
+                    </div><!-- carousel-item -->
+                  </div><!-- carousel-inner -->
+                  <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div><!-- carousel -->
+                <!-- 53.card-body앞쪽에 sns관련 아이콘 -->
+                <h6 class="card-title text-white small bg-warning p-2">
+                  <i class="far fa-comments"></i> 7 comments&nbsp;&nbsp;
+                  <i class="fas fa-camera-retro"></i> 100 shares
+                </h6>
+                <div class="card-body small">
+                  <h6 class="card-title text-warning text-uppercase">
+                    <span class="date">TAP ROOM</span>
+                  </h6>
+                  <p class="card-text">상색브루어리 2층에 위치한 카브루 탭룸</p>
+                </div><!-- card-body -->
+                <!-- 51.버튼 삭제하고 구글맵 활용 -->
+                <iframe
+                  width="100%"
+                  height="50%"
+                  frameborder="0" style="border:0"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3152.8020834145636!2d127.4766480511477!3d37.79467777965648!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35632f14dfecbf83%3A0xcd0ac14b6012d2f2!2z7Lm067iM66Oo!5e0!3m2!1sko!2skr!4v1604995424836!5m2!1sko!2skr" allowfullscreen>
+                </iframe>
+              </div><!-- card -->
+            </div><!-- col_2 -->
+            <div class="col wp13">
+              <!-- 48.card 컴포넌트 넣기 -->
+              <!-- 50. .card옆에 style width값 삭제 -->
+              <div class="card border border-warning">
+                <!-- 49.이미지 지우고 캐로셀 넣기 -->
+                <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+                  <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators2" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators2" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators2" data-slide-to="2"></li>
+                    <li data-target="#carouselExampleIndicators2" data-slide-to="3"></li>
+                  </ol>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="img/frozen_garden/menu6_garden05.jpg" class="d-block w-100" alt="...">
+                    </div><!-- carousel-item -->
+                    <div class="carousel-item">
+                      <img src="img/frozen_garden/menu6_garden06.jpg" class="d-block w-100" alt="...">
+                    </div><!-- carousel-item -->
+                    <div class="carousel-item">
+                      <img src="img/frozen_garden/menu6_garden07.jpg" class="d-block w-100" alt="...">
+                    </div><!-- carousel-item -->
+                    <div class="carousel-item">
+                      <img src="img/frozen_garden/menu6_garden08.jpg" class="d-block w-100" alt="...">
+                    </div><!-- carousel-item -->
+                  </div><!-- carousel-inner -->
+                  <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div><!-- carousel -->
+                <!-- 53.card-body앞쪽에 sns관련 아이콘 -->
+                <h6 class="card-title text-white small bg-warning p-2">
+                  <span><i class="fa fa-comments-o"></i> 3 Comments</span>
+                  <span><i class="fas fa-camera-retro"></i> 125 Shares</span>
+                </h6>
+                <div class="card-body small">
+                  <h6 class="card-title text-warning text-uppercase">
+                    <span class="date">2019/6, 카브루 페스티벌</span>
+                  </h6>
+                  <p class="card-text">in The K호텔 서울 그린가든</p>
+                </div><!-- card-body -->
+                <!-- 51.버튼 삭제하고 구글맵 활용 -->
+                <iframe
+                  width="100%"
+                  height="50%"
+                  frameborder="0" style="border:0"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1583.3851799605052!2d127.03151636596462!3d37.466143569181355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca1290f7e65f1%3A0x2d1ebd080559e5cc!2z642U7LyA7J207Zi47YWU7ISc7Jq4!5e0!3m2!1sko!2skr!4v1604995856630!5m2!1sko!2skr" allowfullscreen>
+                </iframe>
+              </div><!-- card -->
+            </div><!-- col -->
+            <div class="col wp14">
+              <!-- 48.card 컴포넌트 넣기 -->
+              <!-- 50. .card옆에 style width값 삭제 -->
+              <div class="card border border-warning">
+                <!-- 49.이미지 지우고 캐로셀 넣기 -->
+                <div id="carouselExampleIndicators3" class="carousel slide" data-ride="carousel">
+                  <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators3" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators3" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators3" data-slide-to="2"></li>
+                    <li data-target="#carouselExampleIndicators3" data-slide-to="3"></li>
+                  </ol>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="img/frozen_garden/menu6_garden09.jpg" class="d-block w-100" alt="...">
+                    </div><!-- carousel-item -->
+                    <div class="carousel-item">
+                      <img src="img/frozen_garden/menu6_garden10.jpg" class="d-block w-100" alt="...">
+                    </div><!-- carousel-item -->
+                    <div class="carousel-item">
+                      <img src="img/frozen_garden/menu6_garden11.jpg" class="d-block w-100" alt="...">
+                    </div><!-- carousel-item -->
+                    <div class="carousel-item">
+                      <img src="img/frozen_garden/menu6_garden12.jpg" class="d-block w-100" alt="...">
+                    </div><!-- carousel-item -->
+                  </div><!-- carousel-inner -->
+                  <a class="carousel-control-prev" href="#carouselExampleIndicators3" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#carouselExampleIndicators3" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div><!-- carousel -->
+                <!-- 53.card-body앞쪽에 sns관련 아이콘 -->
+                <h6 class="card-title text-white small bg-warning p-2">
+                  <span><i class="fa fa-comments-o"></i> 15 Comments</span>
+                        <span><i class="fas fa-camera-retro"></i> 200 Shares</span>
+                </h6>
+                <div class="card-body small">
+                  <h6 class="card-title text-warning text-uppercase">
+                    <span class="date">2019/6, 카브루 팝업스토어</span>
+                  </h6>
+                  <p class="card-text">수제맥주 팝업스토어 in 홍대
+                  </p>
+                </div><!-- card-body -->
+                <!-- 51.버튼 삭제하고 구글맵 활용 -->
+                <iframe
+                  width="100%"
+                  height="50%"
+                  frameborder="0" style="border:0"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.2010932900016!2d126.917740851014!3d37.550325732714676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c98d070cad22d%3A0xda9fdba339314e1a!2z7ISc7Jq47Yq567OE7IucIOuniO2PrOq1rCDshJzqtZDrj5kgMzk1LTE5OQ!5e0!3m2!1sko!2skr!4v1604996373767!5m2!1sko!2skr" allowfullscreen>
+                </iframe>
+              </div><!-- card -->
+            </div><!-- col -->
+            <div class="col wp15">
+              <!-- 48.card 컴포넌트 넣기 -->
+              <!-- 50. .card옆에 style width값 삭제 -->
+              <div class="card border border-warning">
+                <!-- 49.이미지 지우고 캐로셀 넣기 -->
+                <div id="carouselExampleIndicators4" class="carousel slide" data-ride="carousel">
+                  <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators4" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators4" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators4" data-slide-to="2"></li>
+                    <li data-target="#carouselExampleIndicators4" data-slide-to="3"></li>
+                  </ol>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="img/frozen_garden/menu6_garden13.jpg" class="d-block w-100" alt="...">
+                    </div><!-- carousel-item -->
+                    <div class="carousel-item">
+                      <img src="img/frozen_garden/menu6_garden14.jpg" class="d-block w-100" alt="...">
+                    </div><!-- carousel-item -->
+                    <div class="carousel-item">
+                      <img src="img/frozen_garden/menu6_garden15.jpg" class="d-block w-100" alt="...">
+                    </div><!-- carousel-item -->
+                    <div class="carousel-item">
+                      <img src="img/frozen_garden/menu6_garden16.jpg" class="d-block w-100" alt="...">
+                    </div><!-- carousel-item -->
+                  </div><!-- carousel-inner -->
+                  <a class="carousel-control-prev" href="#carouselExampleIndicators4" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#carouselExampleIndicators4" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div><!-- carousel -->
+                <!-- 53.card-body앞쪽에 sns관련 아이콘 -->
+                <h6 class="card-title text-white small bg-warning p-2">
+                  <span><i class="fa fa-comments-o"></i> 9 Comments</span>
+                        <span><i class="fas fa-camera-retro"></i> 85 Shares</span>
+                </h6>
+                <div class="card-body small">
+                  <h6 class="card-title text-warning text-uppercase">
+                    <span class="date">카브루 브루펍</span>
+                  </h6>
+                  <p class="card-text">in 청담동
+                  </p>
+                </div><!-- card-body -->
+                <!-- 51.버튼 삭제하고 구글맵 활용 -->
+                <iframe
+                  width="100%"
+                  height="50%"
+                  frameborder="0" style="border:0"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.2642944210743!2d127.0490155507852!3d37.5252666764485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca47b1190dcef%3A0xfa7b8425fb88126e!2z7ISc7Jq47Yq567OE7IucIOqwleuCqOq1rCDssq3ri7Trj5kg7JWV6rWs7KCV66GcNznquLggMTk!5e0!3m2!1sko!2skr!4v1604997394567!5m2!1sko!2skr" allowfullscreen>
+                </iframe>
+              </div><!-- card -->
+            </div><!-- col -->
+          </div>
+        </div><!-- container(garden) end -->
+      </section> <!-- garden section end -->
+      
+       <!-------------------------------------
+          58.일곱째 컨텐츠(아코디언&form)를 section#contact로 지정    ---------------------------------------->
+      <section id="contact" class="mt-5">
+        <div class="container py-3">
+          <div class="row py-3 mb-5">
+            <img src="img/menu7_title.png" alt="" class="wp16 img-fluid mx-auto">
+          </div>
+          <div class="row wp17"><!-- p태그 감싸는 row end -->
+            <!-- 60. 아코디언과 form넣을 col구조 넣기 -->
+            <div class="col-md-8">
+              <div class="row">
+                <p class="mx-auto text-white small">FAQ 자주 묻는 질문모음에서 찾아보세요</p>
+              </div>
+              <!-- 61. 아코디언 -->
+              <div class="accordion" id="accordionExample">
+                <div class="card bg-transparent">
+                  <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                      <button class="btn btn-link btn-block text-left text-warning" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        맥주는 어떻게 마셔야 제일 맛있나요?
+                      </button>
+                    </h2>
+                  </div>
+
+                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div class="card-body">
+                      첫째, 적당한 온도에 마셔야 합니다. <br>
+                      <div class="small">
+                        맥주는 온도가 높으면 쓴맛이 강하게 느껴지고 너무 차면 거품이 나지 않을 뿐 아니라 참 맛도 느낄 수 없게 됩니다. <br>
+                        맥주를 가장 마시기 적당한 온도는 여름철 4-8℃, 겨울철 8-12℃로 알려져 있습니다.
+                      </div>
+                      <br>
+                       둘째, 거품과 함께 단숨에 마셔야 합니다. <br>
+                      <div class="small">
+                        거품은 흔히 맥주의 꽃이라고 합니다. <br>
+                        거품은 맥주 속의 탄산가스가 날아가는 것을 막아주어 맥주의 맛이 오래도록 지속될 수 있게 만드는 역할을 합니다.
+                      </div>
+                      <br>
+                       셋째, 맥주컵은 늘 깨끗한 상태를 유지합니다. <br>
+                      <div class="small">
+                        맥주잔에 기름기 등이 남아 있게 되면 풍부한 거품이 잘 나지 않고 쉽게 꺼질 수 있습니다. <br>
+                        깨끗한 상태의 맥주잔을 준비한 후 잔 자체를 차게 하여 맥주를 따라 드시면 기쁨이 두 배랍니다.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card bg-transparent">
+                  <div class="card-header" id="headingTwo">
+                    <h2 class="mb-0">
+                      <button class="btn btn-link btn-block text-left collapsed text-warning" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        카브루 공장은 어디에 있나요?
+                      </button>
+                    </h2>
+                  </div>
+                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <div class="card-body">
+                      <div class="small">수도권 2천만 시민의 식수원이 되는 청평호가 있는 이 곳은 <br>
+                      수자원보호구역으로 지정되어 최고의 자연 환경을 그대로 간직하고 있습니다.</div><br>
+
+                      특히 카브루의 맥주 제조장이 위치한 ‘청평면 상천리와 상색리’는 서쪽으로 청우산, <br>
+                      동쪽으로 불기산이 위치하고 있는 골짜기 지형으로 예로부터 맛이 좋은 샘이 있다고 하여<br>
+                      ‘감전(甘田)‘또는 ‘감천(甘泉)’이라고 불리는 마을이 있습니다.
+                      <br><br>
+
+                      <div class="small">이곳은 융단처럼 펼쳐진 소나무, 잣나무, 참나무가 지역 전체를 감싸고 있어 <br>
+                      계절에 따라 단풍과 설경이 장관을 이루는 청정지역입니다.</div><br>
+
+                      청평의 우수한 자연 환경과 지난 15년 간의 수제 맥주 제조 노하우가 <br>
+                      ‘대한민국 1등 수제 맥주’ 카브루를 만들고 있습니다.
+                    </div>
+                  </div>
+                </div>
+                <div class="card bg-transparent">
+                  <div class="card-header" id="headingThree">
+                    <h2 class="mb-0">
+                      <button class="btn btn-link btn-block text-left collapsed text-warning " type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        경복궁맥주는 어디서 판매되고있나요?
+                      </button>
+                    </h2>
+                  </div>
+                  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body">
+                      <div class="small">
+                        경복궁맥주는 주로 편의점에서 판매되고있습니다.
+                      </div>
+                      판매중인 편의점은 GS25입니다.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col py-4">
+              <div class="row">
+                <p class="mx-auto text-white small">기타 문의사항은 고객센터에 문의해주세요</p>
+              </div>
+              <!-- 62. form넣기 -->
+              <form>
+                <div class="form-group">
+                  <label for="inputName" class="sr-only">이름</label>
+                  <input type="text" class="form-control bg-transparent text-white" id="inputAddress" placeholder="이름">
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputEmail" class="sr-only">이메일</label>
+                    <div class="input-group">
+                      <input type="text" class="form-control bg-transparent text-white" id="inputCity" placeholder="이메일">
+                      <div class="input-group-append">
+                        <div class="input-group-text bg-transparent text-white">@</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputEmailChoose" class="sr-only">이메일</label>
+                    <select id="inputState" class="form-control bg-transparent text-white">
+                      <option selected>------</option>
+                      <option>gmail.com</option>
+                      <option>naver.com</option>
+                      <option>nate.com</option>
+                      <option>daum.com</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputTitle" class="sr-only">제목</label>
+                  <input type="text" class="form-control bg-transparent text-white" id="inputAddress" placeholder="제목">
+                </div>
+                <div class="form-group text-white">
+                  <label for="exampleFormControlTextarea1" class="sr-only">Example textarea</label>
+                  <textarea class="form-control bg-transparent text-white" id="exampleFormControlTextarea1" rows="9" placeholder="문의사항을 적어주세요"></textarea>
+                </div>
+                <button type="submit" class="btn btn-block btn-black">Sign in</button>
+              </form>
+            </div><!-- col(form) end -->
+          </div><!-- row(contact) end -->
+        </div><!-- container(contact) end -->
+      </section><!-- #contact end -->
+
+      <!-- 63. footer구조 -->
+      <footer id="footer" class="bg-black">
+        <div class="container py-3 pb-5">
+          <div class="row py-5">
+          <img src="img/footer_logo.png" alt="" class="img-fluid mx-auto">
+          </div>
+          <div class="row">
+            <div class="col-md-8 text-white small">
+              (주)카브루 "서울 사무소" : 서울시 영등포구 선유로 70(문래동3가) 우리벤처타운2, 808 <br><br>
+              (주)카브루 "상색 브루어리" / 대표이사 : 박정진 / 사업자등록번호 : 107-81-78282 / 경기도 가평군 가평읍 연갈길 20 (상색리 333-5) <br><br>
+              (주)카브루 "상천 브루어리" / 대표이사 : 박정진 / 사업자등록번호 : 149-81-01263 / 경기도 가평군 청평면 수리재길 18 (상천리 1112-2)
+              <br><br>
+            </div>
+            <div class="col-md-4 text-white address">
+              TEL : 02-3143-4082 / Fax : 070-4275-5282 <br>
+              Email : k_market@jinju.co.kr <br>
+              <div class="small">
+              COPYRIGHT ALL RIGHTS RESERVED © 2019
+              </div> <br>
+              카브루 홈페이지
+              <a href="http://www.kabrew.co.kr/main" target="_blank" class="homepage">
+                http://www.kabrew.co.kr/main
+              </a>
+              <ul class="list-unstyled d-flex justify-content-left">
+                <li>
+                  <a href="https://www.instagram.com/kabrewbeer/" target="_blank">
+                    <i class="text-white p-2 mt-2 h3 fab fa-instagram"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/kabrewbeer" target="_blank">
+                    <i class="text-white p-2 mt-2 h3 fab fa-facebook-f"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div><!-- row(footer) end -->
+          <div class="row">
+            
+          </div><!-- row(sns) end -->
+        </div><!-- contianer(footer) end -->
+      </footer>
+    </div><!-- .container-fluid(전체) end-->
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+
+    <!-- 37. 메뉴를 클릭하면 스르륵 애니메이션 되는 외부 플러그인 연결 -->
+    <script src="js/animatescroll.min.js"></script>
+    <!-- 54. font-awesome cdn -->
+    <script src="https://kit.fontawesome.com/4c3e89fe3d.js" crossorigin="anonymous"></script>
+
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/myscript.js"></script>
+  </body>
+</html>
